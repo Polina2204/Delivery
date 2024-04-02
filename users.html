@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Пользователи</title>
+</head>
+
+<head th:insert="blocks/head :: head"></head>
+
+<body style="background-color: #ccc">
+
+<div th:insert="blocks/nav :: nav"></div>
+
+<main class="page project-page mt-5">
+    <section class="portfolio-block project">
+        <div class="container">
+            <div class="heading">
+                <h2>ПОльзователи</h2>
+            </div>
+            <div style="max-width: 100%;">
+                <div class="row" style="margin-bottom: 20px;text-align: center;">
+                    <div class="col">
+                        <h4>Логин</h4>
+                    </div>
+                    <div class="col">
+                        <h4>Роль</h4>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+            <form th:each="user : ${users}" th:if="${user != actual}" th:action="'/users/update/' + ${user.getId()}"
+                  method="post"
+                  style="max-width: 100%;padding: 0px;">
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col">
+                        <input class="form-control" type="text" name="name" th:value="${user.getUsername()}" readonly>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" name="role">
+                            <option th:each="role : ${roles}" th:value="${role}" th:label="${role.name}"
+                                    th:selected="${role == user.role}"></option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-secondary" type="submit">Изменить</button>
+                    </div>
+                    <div class="col-auto">
+                        <a th:href="'/users/delete/' + ${user.id}" class="btn btn-danger" role="button">Удалить</a>
+                    </div>
+                    <div class="col-auto">
+                        <a th:if="${user.accountNonLocked}" th:href="'/users/lock/' + ${user.id}" class="btn btn-secondary" style="background-color: #2e687d">Заблокировать</a>
+                        <a th:unless="${user.accountNonLocked}" th:href="'/users/lock/' + ${user.id}" class="btn btn-primary">Разблокировать</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer th:insert="blocks/footer :: footer" class="page-footer"></footer>
+
+<div th:insert="blocks/scripts :: scripts"></div>
+
+</body>
+
+</html>

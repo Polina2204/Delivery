@@ -1,227 +1,38 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>О нас</title>
-    <!--<title th:text="${title}"/>-->
-    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href=" https://use.fontawesome.com/releases/v6.4.2/css/all.css">
-    <style>
-        *{
-            font-family: 'El Messiri', sans-serif;
-        }
-
-        html,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6{
-            color: #306a73;
-        }
-        body{
-            background: #d4d2d2;
-            text-align: center;
-        }
-        a{
-            text-decoration: none;
-            color: inherit;
-        }
-        input{
-            padding: 10px 12px;
-            display: block;
-            width: 100%;
-            border-radius: 4px;
-            border: 1px solid #306a73;
-            line-height: 1.5rem;
-            color: #444;
-
-        }
-        /*
-            HEADER
-        */
-        header{
-            background: #d0d0d0;
-            height: 105px;
-        }
-        header h1{
-            margin-top: 14px;
-        }
-        header ul{
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-        header ul li{
-            float: left;
-            position: relative;
-        }
-        header ul li a{
-            display: block;
-            font-size: 1.2rem;
-            text-decoration: none;
-            color: #306a73 ;
-            padding: 40px;
-        }
-        header ul li a:hover{
-            background: #02a9af;
-            transition: 0.5s;
-            color: #fff;
-        }
-        header ul li ul{
-            position: absolute;
-            top: 105px;
-            left: 0px;
-            width: 242px;
-            display: none;
-            z-index: 111;
-        }
-        header ul li:hover ul{
-           display: block;
-        }
-        header ul li ul li{
-            width: 100%;
-        }
-        header ul li ul li a{
-            padding: 10px;
-            background: white;
-            color: #008489
-        }
-        /*
-            MAIN
-        */
-
-        main{
-            padding-top: 50px;
-        }
-        
-        #img1{
-            padding-top: 53px;
-        }
-
-        main h2{
-            padding-top: 20px;
-        }
-        #h2_1{
-            padding-top: 53px;
-        }
-        #img3{
-            padding-top: 23px;
-        }
-
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-<header class="container-fluid">
-<div class = "container">
-    <div class = "row">
-        <div class = "col-4">
-            <h1>Магазин-мастерская ювелирных изделий</h1>
+
+<head th:insert="blocks/head :: head"></head>
+
+<body style="background-color: #ccc">
+
+<div th:insert="blocks/nav :: nav"></div>
+
+<main class="page projects-page mt-5">
+    <section class="portfolio-block projects-cards">
+        <div class="container">
+            <div class="heading">
+                <h2>О нас</h2>
+            </div>
+            <p class="lead text-center">
+                Наша мастерская делает украшения под личный заказ, что делает каждое украшение уникальным и по-своему
+                дорогим. Обратившись в нашу мастерскую на выходе вы получите урашение которое не захочется снимать.
+            </p>
+            <iframe allowfullscreen="" frameborder="0" loading="lazy"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2349.833118258118!2d27.55669147701515!3d53.91694133187699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf15da159299%3A0x45dd41f62d000f19!2z0K7QstC10LvQuNGA0L3QsNGPINC80LDRgdGC0LXRgNGB0LrQsNGP!5e0!3m2!1sru!2sby!4v1702893583606!5m2!1sru!2sby"
+                    width="75%" height="400"
+                    style="box-shadow: 0px 0px 6px;border-radius: 5px;border: 1px solid rgb(255,255,255);width: 100%;margin-top: 15px;height: 500px;"></iframe>
         </div>
-        <nav class="col-8">
-            <ul>
-                <li><a href="/catalog">Каталог</a></li>
-                <li><a href="/home">Главная страница</a></li>
-                <li><a href="/uslugi">Услуги</a></li>
-                <li>
-                    <a href="/login">
-                        <i class="fa fa-user"></i>
-                        </i>Личный кабинет</a>
-                    <ul>
-                        <li><a href="#">Админ панель</a></li>
-                        <li><a href="#">Выход</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div></header>
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-    <symbol id="check2" viewBox="0 0 16 16">
-      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
-    </symbol>
-    <symbol id="circle-half" viewBox="0 0 16 16">
-      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
-    </symbol>
-    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
-      <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
-    </symbol>
-    <symbol id="sun-fill" viewBox="0 0 16 16">
-      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
-    </symbol>
-    <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
-      </symbol>
-    <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
-      </symbol>
-  </svg>
+    </section>
+</main>
 
-    <!-- Three columns of text below the carousel -->
-    <main class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4">
-             <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLe7Alm-Ekd8-KvRKGmt83M4LzY3z_3qvAJA&usqp=CAU">
-              <h2 class="fw-normal">Иван Марченков</h2>
-              <p>Специалист по работе с кольцами.</p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <img id="img1" src=" data:image/jpeg;base64,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">
-              <h2 id="h2_1" class="fw-normal">Ольга Рябцева</h2>
-              <p>Специалист по работе с украшениями на шею.</p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-              <img id="img3" src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7XXRpexnJt0HvmMOh8WIx3zWdu8XluBqNQ&usqp=CAU">
-              <h2 class="fw-normal">Сергей Горецкий</h2>
-              <p>Специалист по работе с браслетами.</p>
-            </div><!-- /.col-lg-4 -->
-          </div><!-- /.row -->
-    </main>
-    
+<footer th:insert="blocks/footer :: footer" class="page-footer"></footer>
 
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">О нашей мастерской. <span class="text-body-secondary">Мы делаем людей счастливее.</span></h2>
-        <p class="lead">Наша мастерская делает украшения под личный заказ, что делает каждое украшение уникальным и по-своему дорогим.
-            Обратившись в нашу мастерскую на выходе вы получите украшение, которое не захочется снимать.
-            Мы работаем уже долгое время и наши мастера имеют большой опыт работы с разными изделиями.
-        </p>
-      </div>
-      <div class="col-md-5">
-        <img src="https://royisal.com/wp-content/uploads/2020/01/Alan-Revere-at-his-work-bench-e1578334046511-521x400.png">
-    </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
-  </div>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>О нас</title>
-</head>
-<body>
+<div th:insert="blocks/scripts :: scripts"></div>
 
 </body>
+
 </html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title th:text="${product.name}">Инструмент</title>
+</head>
+
+<head th:insert="blocks/head :: head"></head>
+
+<body style="background-color: #ccc">
+
+<div th:insert="blocks/nav :: nav"></div>
+
+<main class="page project-page mt-5">
+    <section class="portfolio-block project">
+        <div class="container">
+            <div class="heading">
+                <h2 th:text="${product.name}">Название</h2>
+            </div>
+            <div class="row">
+                <div class="col"><img th:src="'/img/' + ${product.file}" width="100%" style="border-radius: 20px"></div>
+                <div class="col">
+                    <form th:action="'/cart/add/' + ${product.id}" method="post" th:if="${role == 'BUYER'}"
+                          style="margin-bottom: 20px;">
+                        <div class="row">
+                            <div class="col">
+                                <input style="margin-right: 20px;" class="form-control" type="number" min="1"
+                                       th:max="${product.quantity}" name="quantity">
+                            </div>
+                            <div class="col-5">
+                                <button class="btn btn-secondary" type="submit">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div th:if="${role == 'ADMIN'}" style="margin-bottom: 20px;">
+                        <div class="row">
+                            <div class="col">
+                                <a th:href="'/product/edit/' + ${product.id}" class="btn btn-secondary" role="button"
+                                   style="margin-right: 20px;">Изменить</a>
+                                <a th:href="'/product/delete/' + ${product.id}" class="btn btn-danger"
+                                   role="button">Удалить</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col">
+                                <span>Категория:&nbsp;</span><a th:text="${product.category.name}"
+                                                                th:href="'/search/' + ${product.category}">Категория</a>
+                                <br>
+                                <span>Цена:&nbsp;</span><span th:text="${product.price}">Цена</span>
+                                <br>
+                                <span>Количество:&nbsp;</span><span th:text="${product.quantity}">Количество</span>
+                                <br>
+                                <span>Проба материала:&nbsp;</span><span th:text="${product.warranty}"></span> месяц(ев)
+                                <br>
+                                <span>Материал:&nbsp;</span><span th:text="${product.material.name}"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer th:insert="blocks/footer :: footer" class="page-footer"></footer>
+
+<div th:insert="blocks/scripts :: scripts"></div>
+
+</body>
+
+</html>
