@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Главная страница</title>
+    <!--<title th:text="${title}"/>-->
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href=" https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+    <style>
+        *{
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        html,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            color: #306a73;
+        }
+        body{
+            background: #d4d2d2;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        input{
+            padding: 10px 12px;
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #306a73;
+            line-height: 1.5rem;
+            color: #444;
+
+        }
+        /*
+            HEADER
+        */
+        header{
+            background: #d0d0d0;
+            height: 105px;
+        }
+        header h1{
+            margin-top: 14px;
+        }
+        header ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        header ul li{
+            float: left;
+            position: relative;
+        }
+        header ul li a{
+            display: block;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #306a73 ;
+            padding: 40px;
+        }
+        header ul li a:hover{
+            background: #02a9af;
+            transition: 0.5s;
+            color: #fff;
+        }
+        header ul li ul{
+            position: absolute;
+            top: 105px;
+            left: 0px;
+            width: 242px;
+            display: none;
+            z-index: 111;
+        }
+        header ul li:hover ul{
+           display: block;
+        }
+        header ul li ul li{
+            width: 100%;
+        }
+        header ul li ul li a{
+            padding: 10px;
+            background: white;
+            color: #008489
+        }
+        /*
+          slider
+        */
+        .slider-title{
+            padding: 20px;
+        }
+        .carousel{
+            height: 300px;
+        }
+        .carousel-inner, carousel-item{
+            height: 300px;
+        }
+        .carousel-caption{
+            font-size: 2rem;
+            font-weight: 400;
+            max-width: 100%;
+            padding: 0.2em;
+        }
+
+        /*NAIN*/
+
+        .main-content h2{
+            margin: 30px 0;
+        }
+        .main-content .post{
+            margin-bottom: 5em;
+        }
+        .main-content .post_text{
+            background: #fff;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        /*Sidebar*/
+        .search{
+            margin-top: 99px;
+        }
+        .sidebar .section{
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .sidebar .topics ul{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            border-top: 1px solid #e0e0e0;
+        }
+        .sidebar .topics ul li a{
+            display: block;
+            padding: 15px 0px 15px 0px;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 500;
+            color: #5c5b5b;
+            font-size: 1.2em;
+        }
+        .sidebar .topics ul li a:hover{
+            padding-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .title{
+            padding: 20px;
+            color: #306a73 ;
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="container-fluid">
+<div class = "container">
+    <div class = "row">
+        <div class = "col-4">
+            <h1>Магазин-мастерская ювелирных изделий</h1>
+        </div>
+        <nav class="col-8">
+            <ul>
+                <li><a href="/catalog">Каталог</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/uslugi">Услуги</a></li>
+                <li>
+                    <a href="/login">
+                        <i class="fa fa-user"></i>
+                        </i>Личный кабинет</a>
+                    <ul>
+                        <li><a href="#">Админ панель</a></li>
+                        <li><a href="#">Выход</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div></header>
+<div class="container">
+    <div class="row">
+        <h2 class="slider-title">
+        </h2>
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTsfgr9IHTpuatGgLQ1uYK1otxyM97-WmOpeOUb3wnSPgXe_pkO" class="d-block w-40" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Сережки</h5>
+                    <p>Изящное украшения для эстетичного вечера</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAtRylQEEPkNip0SMJB83KDU-Smn_waIf1aKXpXp4lJzRg6NRY" class="d-block w-40" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Жемчуг</h5>
+                    <p>Для более нежного образа</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYCL9VeJUuchsNEtLDUnNHAoz42s1zaKfqzQHkhPu8EfNkSA9p" class="d-block w-40" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Кольцо</h5>
+                    <p>Для подчёркивания красоты твоих пальцев</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!--Блок карусели конец-->
+
+<!--блок main начало-->
+<div class="container">
+    <div class="content row">
+        <!--main content-->
+        <div class="main-content col-md-9">
+            <h2>Последние публикации</h2>
+            <div class="post row">
+                <div class="img col-12 col-md-4">
+                    <img src="https://uvelir.info/media/thumbs/digest/photos/Kng6BDJ0RXcQ_4_1_Siv7TQQ.jpg" alt="" class="img-thumbnail">
+                    </img>
+                </div>
+                <div class="post_text col-12 col-md-8">
+                    <h2>
+                        <a href="#">Интервью нашего мастера</a>
+                    </h2>
+                    <i class="far fa-user"> Илья Макаров</i>
+                    <i class="far fa-calendar"> Mar 11, 2023</i>
+                    <p class="preview-text">
+                        Каждое изделлие - это уникальный подход к каждому покупателю.
+                        Я рад, что делаю наших клиентов счастливее.
+                        Наша работа уникально тем, что такие украшения вы не найдёте на полках
+                        магазина. Каждре изделлие сделано по индивидульному заказу с теплом и
+                        любовью для нагих клиентов
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <!--sidebar content-->
+        <div class="sidebar col-md-3 col-12">
+
+            <div class="section search">
+                <h3>Поиск</h3>
+                <form action="index.html" method="post">
+                    <input type="text" name="search-tern" class="text-input" placeholder="Поиск...">
+                </form>
+            </div>
+
+            <div class="section topics">
+                <h3>Категории</h3>
+                <ul>
+                    <li><a href="#">Сережки</a></li>
+                    <li><a href="#">Цепочки</a></li>
+                    <li><a href="#">Браслеты</a></li>
+                    <li><a href="#">Кольца</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

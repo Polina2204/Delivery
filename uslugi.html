@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Услуги</title>
+    <!--<title th:text="${title}"/>-->
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href=" https://use.fontawesome.com/releases/v6.4.2/css/all.css">
+    <style>
+        *{
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        html,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            color: #306a73;
+        }
+        body{
+            background: #d4d2d2;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        input{
+            padding: 10px 12px;
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #306a73;
+            line-height: 1.5rem;
+            color: #444;
+
+        }
+        /*
+            HEADER
+        */
+        header{
+            background: #d0d0d0;
+            height: 105px;
+        }
+        header h1{
+            margin-top: 14px;
+        }
+        header ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        header ul li{
+            float: left;
+            position: relative;
+        }
+        header ul li a{
+            display: block;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #306a73 ;
+            padding: 40px;
+        }
+        header ul li a:hover{
+            background: #02a9af;
+            transition: 0.5s;
+            color: #fff;
+        }
+        header ul li ul{
+            position: absolute;
+            top: 105px;
+            left: 0px;
+            width: 242px;
+            display: none;
+            z-index: 111;
+        }
+        header ul li:hover ul{
+           display: block;
+        }
+        header ul li ul li{
+            width: 100%;
+        }
+        header ul li ul li a{
+            padding: 10px;
+            background: white;
+            color: #008489
+        }
+        /*
+            MAIN
+        */
+
+        main{
+            padding-top: 50px;
+        }
+        
+        #img1{
+            padding-top: 53px;
+        }
+
+        main h2{
+            padding-top: 20px;
+        }
+        #h2_1{
+            padding-top: 53px;
+        }
+        #img3{
+            padding-top: 23px;
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<form>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    <header class="container-fluid">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-4">
+                    <h1>Магазин-мастерская ювелирных изделий</h1>
+                </div>
+                <nav class="col-8">
+                    <ul>
+                        <li><a href="/catalog">Каталог</a></li>
+                        <li><a href="/home">Главная страница</a></li>
+                        <li><a href="/about">О нас</a></li>
+                        <li>
+                            <a href="/login">
+                                <i class="fa fa-user"></i>
+                                </i>Личный кабинет</a>
+                            <ul>
+                                <li><a href="#">Админ панель</a></li>
+                                <li><a href="#">Выход</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div></header>
+
+    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Услуги нашего мастера Ильи Макарова</h1>
+            <p class="col-md-8 fs-4">Если вы хотите получить изящное кольцо, то вам надо обращаться к услугам этого мастера.
+                Он мастер в сфере колец и не оставит вас без оригинального подарка.
+            </p>
+            <button class="btn btn-outline-secondary" type="button">Узнать подробнее</button>
+        </div>
+    </div>
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>Услуги нашего мастера Ольги Рябцевой</h2>
+                <p>Если вы желаете украсить ваш образ и сделать его оригинальным и незабываем вы пришли к нужному мастеру.
+                    Ольга Рябцева мастер в своём деле. Бусы, цепочки или калье в её руках заиграют яркими красками.
+                </p>
+                <button class="btn btn-outline-secondary" type="button">Узнать подробнее</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>Услуги нашего мастера Сергея Горецкого</h2>
+                <p>Украшение запястья издавна было привлекательным для общества. сергей Горецкий этом мастер.
+                    Созданный им браслет будет долго замечаться в обществе, так как на него сложно не обратить внимания.
+                </p>
+                <button class="btn btn-outline-secondary" type="button">Узнать подробнее</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
