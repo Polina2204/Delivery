@@ -1,0 +1,13 @@
+body {
+    font-family: "Playfair Display";
+    font-size: 1.2em;
+}
+
+
+.button-logout {
+    text-decoration: none;
+    color: white;
+    padding: 8px 0 0 0;
+    font-size: 1em;
+    border: none;
+}
